@@ -3,6 +3,8 @@
 <head>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-TDGLP86S3X"></script>
+<script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
+
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -13,11 +15,10 @@
 <script>
 
 window.onload = function() {
-	noContext = document.getElementById('noContextMenu');
-
-	noContext.addEventListener('contextmenu', e => {
-	  e.preventDefault();
-	});
+	twemoji.parse(document.body, {
+        folder: 'svg',
+        ext: '.svg'
+    });
 }
 
 function onKonamiCode(cb) {
@@ -32,77 +33,70 @@ function onKonamiCode(cb) {
     input = ("" + e.keyCode);
   });
 }
-onKonamiCode(function () {alert('pewnie i tak spojrzales w kod strony')})
+onKonamiCode(function () {alert('pewnie i tak spojrzal*s w kod strony')})
 </script>
 <style>
-@import url('https://fonts.googleapis.com/css?family=Montserrat:100');
-
-@keyframes anim {
-  from {opacity:0;}
-  to {opacity:1;}
-}
-
-
-a, u {
-    text-decoration: none;
-}
-
-html, body, h1 {
-	padding: 0;
-	margin: 0;
-	font-family: 'Montserrat', sans-serif;
-	background-color: black;
-}
-
-.video-container {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%; 
-  overflow: hidden;
-}
-.video-container video {
-  animation-name: anim;
-  animation-duration: 10s;
-  /* Make video to at least 100% wide and tall */
-  min-width: 100%; 
-  min-height: 100%; 
-
-  /* Setting width & height to auto prevents the browser from stretching or squishing the video */
-  width: auto;
-  height: auto;
-
-  /* Center the video */
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-}
-
-.content {
-  position: fixed;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  color: #f1f1f1;
-  width: 100%;
-  padding: 20px;
-  margin-left: -8px;
-}
-
-
+	html {
+		font-family: 'Microsoft YaHei UI Light', 'sans-serif';
+	}
+	body {
+		color: white;
+		font-size: 20px;
+		background-color: black;
+	}
+	a {
+		color: white;
+	}
+	
+	img.emoji {
+		width: 32px;
+		height: 32px;
+		position: relative;
+		top: 6px;
+	}
 </style>
 </head>
 <body>
-	<div class="video-container">
-	  <video id="noContextMenu" autoplay muted loop>
-		<source src="vapor.mp4" type="video/mp4" />
-	  </video>
-	</div>
-	
-	<div class="content">
-		<center><a href="https://github.com/vjasieg" style="color: white; font-size: 35px; letter-spacing: 10px;">github</a></center>
-		<center><a href="/korwin" style="color: white; font-size: 35px; letter-spacing: 10px;">generator tekstow korwina</a></center>
-	</div>
+	<center><h1 id="vjasieg-me">vjasieg.me</h1></center>
+<center><p>kiedyś powstanie tu ładna strona 😎</p></center>
+<hr>
+<h2 id="aktywne-projekty-">Aktywne projekty 👷</h2>
+<ul>
+	<li>
+		<p><strong>⛏️ Nostalgawka</strong> - serwer minecraft na starsze wersje gry</p>
+		<ul>
+			<li>
+				Linki:
+				<ul>
+					<li><a href="https://www.facebook.com/groups/287744518543666">Grupa na facebooku</a></li>
+					<li><a href="https://discord.gg/T3cSShCQNm">Discord serwera</a></li>
+					<li><a href="https://nostalgawka.xyz">Strona serwera (aktualnie nieaktywna)</a></li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p><strong>🧅🌊 Onionwave FM</strong> - internetowe radio labelu <a href="https://onionwave.com">ONIONWAVE</a></p>
+		<ul>
+			<li>
+				Użyte technologie/języki
+				<ul>
+					<li>HTML, CSS, JS, Java, Python</li>
+					<li>Docker</li>
+					<li>Microsoft Azure</li>
+					<li><a href="https://www.azuracast.com/">AzuraCast</a></li>
+				</ul>
+			</li>
+			<li>
+				Linki:
+				<ul>
+					<li><a href="https://twitch.tv/onionwaverec">Transmisja na twitchu</a></li>
+					<li><a href="https://onionwave.com/radio">Webowa wersja radia</a></li>
+					<li><a href="http://discord.gg/SQ8jWEp">Discord ONIONWAVE</a></li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
 </body>
 </html>

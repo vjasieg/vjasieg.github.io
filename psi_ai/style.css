@@ -70,3 +70,9 @@ body {
     margin-right: auto;
     width: 35%;
 }
+
+#info_text {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}

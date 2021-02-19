@@ -18,28 +18,33 @@
         <p id="wait" class="wait"></p>
     </div>
     <div id="div_img" class="div_img"></div>
+    <p id="info_text">* Owoce i warzywa dostępne do wykrycia: jabłko, ziemniak, banan, ogórek, truskawka, pomarańcza, winogrona</p>
 </body>
 <script>
     function sumbit() {
         const selectedFile = document.getElementById('pic').files[0];
-        console.log(selectedFile)
-        document.getElementById('wait').innerHTML = "Poczekaj... Trwa przetwarzanie zdjęcia."
-        var fd = new FormData();
-        fd.append( 'file', selectedFile);
-        $.ajax({
-            url: 'http://95.216.210.103:2137/send',
-            data: fd,
-            processData: false,
-            contentType: false,
-            type: 'POST',
-            success: function(data){
-                $('.div_img').html('<img id="img" src="data:image/png;base64,' + data.base64 + '" />');
-                document.getElementById('wait').innerHTML = "Przetworzono! Wysłałeś/aś: " + data.name
-            },
-            error: function (xhr, ajaxOptions, thrownError) {
-                document.getElementById('wait').innerHTML = "Nastąpił błąd przy przetwarzaniu zdjęcia."
-            }
-        });
+        if(selectedFile !== undefined) {
+            document.getElementById('wait').innerHTML = "Poczekaj... Trwa przetwarzanie zdjęcia."
+            var fd = new FormData();
+            fd.append('file', selectedFile);
+            $.ajax({
+                url: 'http://95.216.210.103:2137/send',
+                data: fd,
+                processData: false,
+                contentType: false,
+                type: 'POST',
+                success: function (data) {
+                    $('.div_img').html('<img id="img" src="data:image/png;base64,' + data.base64 + '" />');
+                    document.getElementById('wait').innerHTML = "Przetworzono! Wysłałeś/aś: " + data.name
+                    document.getElementById('button').innerHTML = 'Prześlij plik...'
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    document.getElementById('wait').innerHTML = "Nastąpił błąd przy przetwarzaniu zdjęcia."
+                }
+            });
+        }else {
+            alert("Wybierz plik!")
+        }
     }
 </script>
 </html>

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="pl">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,200&display=swap" rel="stylesheet">
+    <script language="JavaScript" type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>AI Object Detection - PSI 2C</title>
+</head>
+<body>
+    <h1 id="title">Wykrywanie obiektów za pomocą AI</h1>
+    <div id="form">
+        <div class="upload-btn-wrapper">
+            <button id="button" class="btn">Prześlij plik...</button>
+            <input type="file" name="myfile" id="pic" onchange="document.getElementById('button').innerHTML = 'Załadowano plik!'"/>
+        </div>
+        <input type="button" id='btn' value="Prześlij!" onclick="sumbit()">
+        <p id="wait" class="wait"></p>
+    </div>
+    <div id="div_img" class="div_img"></div>
+</body>
+<script>
+    function sumbit() {
+        const selectedFile = document.getElementById('pic').files[0];
+        console.log(selectedFile)
+        document.getElementById('wait').innerHTML = "Poczekaj... Trwa przetwarzanie zdjęcia."
+        var fd = new FormData();
+        fd.append( 'file', selectedFile);
+        $.ajax({
+            url: 'http://95.216.210.103:2137/send',
+            data: fd,
+            processData: false,
+            contentType: false,
+            type: 'POST',
+            success: function(data){
+                $('.div_img').html('<img id="img" src="data:image/png;base64,' + data.base64 + '" />');
+                document.getElementById('wait').innerHTML = "Przetworzono! Wysłałeś/aś: " + data.name
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                document.getElementById('wait').innerHTML = "Nastąpił błąd przy przetwarzaniu zdjęcia."
+            }
+        });
+    }
+</script>
+</html>

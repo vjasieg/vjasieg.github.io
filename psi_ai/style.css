@@ -1,0 +1,72 @@
+html {
+    font-family: 'Montserrat'
+}
+
+body {
+    background: rgb(254, 206, 227);
+    background: linear-gradient(90deg, rgba(254, 206, 227, 1) 0%, rgba(148, 187, 233, 1) 100%);
+}
+
+#title {
+    text-align: center;
+    margin-top: 60px;
+    font-size: 50px;
+}
+
+#form {
+    height: 230px;
+    width: 445px;
+    margin: 0 auto;
+}
+
+.upload-btn-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.btn {
+    border: 1px solid black;
+    background-color: transparent;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: bold;
+    width: 445px;
+    font-family: Montserrat;
+}
+
+.upload-btn-wrapper input[type=file] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+#btn {
+    width: 200px;
+    height: 50px;
+    margin: 0 auto;
+    background-color: transparent;
+    border: 1px solid black;
+    font-family: Montserrat;
+    font-size: 20px;
+    margin-left: 115px;
+    margin-top: 10px;
+}
+
+#wait {
+    font-size: 30px;
+    text-align: center;
+}
+
+#div_img {
+    margin: 0 auto;
+}
+
+#img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 35%;
+}

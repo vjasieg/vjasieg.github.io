@@ -13,7 +13,7 @@ Użytkownik przesyła zdjęcie poprzez formularz do serwera requestem POST. Serw
 RestAPI
 --------
 API zostało napisane w Pythonie przy użyciu frameworku Flask. Użytkownik wysyła zdjęcie, API przetwarza, zapisuje do pliku i wysyła go w odpowiedzi wraz z nazwą wykrytego przedmiotu. Zapytanie można wysłać ręcznie pod `http://95.216.210.103:2137/send` (w form-data musi być klucz o nazwie "file" a pod nim jako value nasze zdjęcie).
-###Kod
+**Kod**
 ```python
 from flask import Flask, request
 from flask_restful import Resource, Api

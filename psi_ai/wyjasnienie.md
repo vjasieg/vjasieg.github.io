@@ -1,5 +1,5 @@
 # AI Image Detector - PSI
-###Użyte technologie/języki: 
+**Użyte technologie/języki:**
 * Python
 * Javascript
 * YOLO

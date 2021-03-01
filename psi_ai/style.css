@@ -75,4 +75,13 @@ body {
     position: absolute;
     right: 0;
     bottom: 0;
+	font-size: 20px;
+	margin-bottom: 0px;
+}
+
+#info_text_left {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+	font-size: 20px;
 }

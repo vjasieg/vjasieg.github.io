@@ -1,0 +1,57 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+</head>
+<body>
+<style>
+	#label, h1, #result {
+		font-family: 'Microsoft JhengHei Light';
+	}
+</style>
+<h1>Opisz owoc!</h1>
+<form>
+	<p id="label">Rozmiar:</p>
+	<select id="size" onchange="getFruit()">
+		<option value="small">Mały</option>
+		<option value="medium">Średni</option>
+		<option value="big">Duży</option>
+	</select>	
+	<br>
+	<p id="label">Kolor:</p>
+	<select id="color" onchange="getFruit()">
+		<option value="red">Czerwony</option>
+		<option value="green">Zielony</option>
+		<option value="yellow">Żółty</option>
+		<option value="orange">Pomaranczowy</option>
+		<option value="blue">Niebieski</option>
+		<option value="brown">Brązowy</option>
+		<option value="violet">Fioletowy</option>
+	</select>		
+	<br>
+	<p id="label">Kształt:</p>
+	<select id="shape" onchange="getFruit()">
+		<option value="long">Długi</option>
+		<option value="round">Okrągly</option>
+		<option value="other">Inny</option>
+	</select>	
+	<br>
+	<p id="label">Smak:</p>
+	<select id="taste" onchange="getFruit()">
+		<option value="sweet">Słodki</option>
+		<option value="sour">Kwaśny</option>
+		<option value="other_taste">Inny</option>
+	</select>
+	<br>
+	<p id="label">Gdzie rośnie:</p>
+	<select id="growth" onchange="getFruit()">
+		<option value="bush">Krzak</option>
+		<option value="underground">W ziemi</option>
+		<option value="tree">Drzewo</option>
+	</select>
+	<br>
+</form>
+<h2 id="result"></h2>
+<button id="nextbtn" style="display: none;" onclick="displayNext()">Następny możliwy owoc</button>
+</body>
+<script src="main.js"></script>
+</html>
